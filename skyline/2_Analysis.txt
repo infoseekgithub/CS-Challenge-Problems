@@ -1,0 +1,76 @@
+[Algorithm and Data Structure]
+
+1. The Skyline Problem says that if there are two buildings at the same position,
+   the taller one overshadows the lower one. 
+
+(1) When traversing a building on its left side (the rising side), if there is a
+    taller building whose span has notended yet, then the rising side of current
+    building is completely erased in the skyline.
+
+(2) When traversing a building on its right side (the sinking side), if there is
+    a taller building whose span has not ended yet, then the sinking side of the
+    current building is completely erased in the skyline.
+
+In both (1) and (2) above, if there are multiple taller buildings, the tallest
+one rules.
+
+Therefore, we need to have a PriorityQueue data structure where we can easily
+extract the tallest one that is still not ended at the current place
+(either rising side or sinking side). Let's call this prioQueue.
+
+
+2. For each building, we need to check both the rising side and the sinking side.
+   They may both be needed.
+
+(1) On the rising side of the current building, if there does not exist a building
+    that is taller than (or equal to the current building), then the rising edge
+    needs to be outputted. 
+
+(2) On the sinking side of the current building, if there does not exist a building
+    that is taller than (or equal to the current building), then the tallest one
+    (but still smaller than current building) that will still span will need to be
+    outputted.
+
+What if there is a building sinking and another building rising at the same place
+(Suppose there is no other building overshadow the two buildings at this place.)?
+
+(a) The rising one is taller than the sinking one: then the rising edge needs to
+be outputted.
+
+(b) The rising one is lower than the sinking one: then the rising edge still needs
+to be outputted.
+
+(c) The rising one is equal to the sinking one: then nothing needs to be outputted.
+
+So, we need to process the the rising and sinking events (let's call them events)
+sequentially.
+
+To do this, we need to allocate an array to store all the events sequentially. We
+should combine the events that happen at the same position. We can sort all the
+events to make them sequential. Since at each event point, there could be either
+one type of event (rising or sinking); or two types of events (i.e. both rising
+and sinking). We can use a data structure to store the event type. We should also
+store the height of the two types of events, risingHeight and sinkingHeight. 
+
+In case of multiple rising events, the highest one overshadows others. In case of
+multiple sinking events,the highest one overshadows others.
+
+Also, in case of a rising event, we need to update the prioQueue what buildings
+starts from this position, and offer them to the prioQueue. Since we have done
+the event consolidations, we should keep a list of the buildings info for each
+rising event so that we can offer the buildings to prioQueue when the rising
+event occurs.
+
+
+[Complexity Analysis]
+
+Sorting the event list takes O(n * logn), iterating through the event list where
+in each iteration we update (poll/offer) the piroQueue, thus also has complexity
+of O(n * logn).
+
+Overall the time complexity is O(n * logn).
+
+We use two major data structures, the event list  (ArrayList) and prioQueue
+(PriorityQueue), each has space requirement of O(n).
+
+Overall the space complexity is O(n).
