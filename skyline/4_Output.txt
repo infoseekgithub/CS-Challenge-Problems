@@ -1,0 +1,61 @@
+
+[
+Event at pos 1: Rising to 10, Building list:[(100 , 10)], 
+Event at pos 2: Rising to 12, Building list:[(3 , 8), (3 , 12)], 
+Event at pos 3: Rising to 12: Sinking from 12, Building list:[(4 , 12), (4 , 11)], 
+Event at pos 4: Sinking from 12, 
+Event at pos 5: Rising to 9, Building list:[(6 , 9)], 
+Event at pos 6: Rising to 9: Sinking from 9, Building list:[(7 , 9)], 
+Event at pos 7: Sinking from 9, 
+Event at pos 8: Rising to 10, Building list:[(9 , 10)], 
+Event at pos 9: Rising to 10: Sinking from 10, Building list:[(10 , 10)], 
+Event at pos 10: Sinking from 10, 
+Event at pos 11: Rising to 12, Building list:[(12 , 12)], 
+Event at pos 12: Rising to 14: Sinking from 12, Building list:[(13 , 14)], 
+Event at pos 13: Sinking from 14, 
+Event at pos 15: Rising to 8, Building list:[(16 , 8)], 
+Event at pos 16: Rising to 15: Sinking from 8, Building list:[(17 , 15)], 
+Event at pos 17: Sinking from 15, 
+Event at pos 18: Rising to 5, Building list:[(19 , 5)], 
+Event at pos 19: Rising to 9: Sinking from 5, Building list:[(20 , 9)], 
+Event at pos 20: Sinking from 9, 
+Event at pos 21: Rising to 10, Building list:[(22 , 10)], 
+Event at pos 22: Rising to 17: Sinking from 10, Building list:[(23 , 17)], 
+Event at pos 23: Sinking from 17, 
+Event at pos 24: Rising to 6, Building list:[(25 , 6)], 
+Event at pos 25: Rising to 10: Sinking from 6, Building list:[(26 , 10)], 
+Event at pos 26: Sinking from 10, 
+Event at pos 27: Rising to 9, Building list:[(28 , 9)], 
+Event at pos 28: Rising to 5: Sinking from 9, Building list:[(29 , 5)], 
+Event at pos 29: Sinking from 5, 
+Event at pos 30: Rising to 16, Building list:[(31 , 16)], 
+Event at pos 31: Rising to 8: Sinking from 16, Building list:[(32 , 8)], 
+Event at pos 32: Sinking from 8, 
+Event at pos 33: Rising to 16, Building list:[(34 , 16)], 
+Event at pos 34: Rising to 12: Sinking from 16, Building list:[(35 , 12)], 
+Event at pos 35: Sinking from 12, 
+Event at pos 36: Rising to 10, Building list:[(37 , 10)], 
+Event at pos 37: Rising to 8: Sinking from 10, Building list:[(38 , 8)], 
+Event at pos 38: Sinking from 8, 
+Event at pos 39: Rising to 12, Building list:[(40 , 12)], 
+Event at pos 40: Rising to 10: Sinking from 12, Building list:[(41 , 10)], 
+Event at pos 41: Sinking from 10, 
+Event at pos 100: Sinking from 10
+]
+
+[[1, 10], [2, 12], [4, 10], [11, 12], [12, 14], [13, 10], [16, 15], [17, 10], [22, 17], [23, 10], [30, 16], [31, 10], [33, 16], [34, 12], [35, 10], [39, 12], [40, 10], [100, 0]]
+
+[
+Event at pos 2: Rising to 10, Building list:[(9 , 10)], 
+Event at pos 3: Rising to 15, Building list:[(7 , 15)], 
+Event at pos 5: Rising to 12, Building list:[(12 , 12)], 
+Event at pos 7: Sinking from 15, 
+Event at pos 9: Sinking from 10, 
+Event at pos 12: Sinking from 12, 
+Event at pos 15: Rising to 10, Building list:[(20 , 10)], 
+Event at pos 19: Rising to 8, Building list:[(24 , 8)], 
+Event at pos 20: Sinking from 10, 
+Event at pos 24: Sinking from 8
+]
+
+[[2, 10], [3, 15], [7, 12], [12, 0], [15, 10], [20, 8], [24, 0]]																												
