@@ -1,7 +1,6 @@
-
 Building H2O
-Problem courtesy of LeetCode with certain modification, see end of the file.
 
+Problem courtesy of LeetCode with certain modification, see end of the file.
 https://leetcode.com/problems/building-h2o/
 
 There are two kinds of threads, oxygen and hydrogen. Your goal is to group
@@ -53,7 +52,7 @@ Constraints:
     Total number of H will be 2n in the input string.
     Total number of O will be n in the input string.
 
-Modification the the Constraints:
+Modification to the Constraints:
 Let's say the input is a random string of 'O' and 'H' with no guarantee of
 how many 'O's and how many 'H's.
 Output strings of 'O' and 'H' with 1 'O' for every 2 'H's for the number of
