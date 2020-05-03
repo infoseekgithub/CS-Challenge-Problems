@@ -1,0 +1,124 @@
+$javac H2O.java
+$java -Xmx128M -Xms16M H2O
+runH: posH = 0
+runO: posO = 1
+runH Barrier 1 await
+runH: posH = 4
+runH Barrier 1 await
+runO Barrier 1 await
+runO Barrier 1 reached.
+runH Barrier 1 reached.
+runH: has more data
+runH Barrier 1 reached.
+runH: has more data
+runH Barrier 2 await
+runH Barrier 2 await
+runO: has more data
+runO Barrier 2 await
+runO Barrier 2 reached.
+runH Barrier 2 reached.
+runH Barrier 2 reached.
+runH: posH = 5
+runO: posO = 2
+runH: posH = 6
+runH Barrier 1 await
+runH Barrier 1 await
+runO Barrier 1 await
+runO Barrier 1 reached.
+runO: has more data
+runO Barrier 2 await
+runH Barrier 1 reached.
+runH: has more data
+runH Barrier 1 reached.
+runH: has more data
+runH Barrier 2 await
+runH Barrier 2 await
+runH Barrier 2 reached.
+runH: posH = 7
+runH Barrier 1 await
+runH Barrier 2 reached.
+runO Barrier 2 reached.
+runO: posO = 3
+runO Barrier 1 await
+runH: posH = 8
+runH Barrier 1 await
+runH Barrier 1 reached.
+runH: has more data
+runO Barrier 1 reached.
+runO: has more data
+runO Barrier 2 await
+runH Barrier 1 reached.
+runH: has more data
+runH Barrier 2 await
+runH Barrier 2 await
+runH Barrier 2 reached.
+runO Barrier 2 reached.
+runO: posO = 9
+runO: set has no more data
+runO Barrier 1 await
+runH Barrier 2 reached.
+runH: posH = 9
+runH: set has no more data
+runH Barrier 1 await
+runH: posH = 9
+runH: set has no more data
+runH Barrier 1 await
+runH Barrier 1 reached.
+runH: no more data, exiting ...
+runH Barrier 2 await
+runO Barrier 1 reached.
+runO: no more data, exiting ...
+runO Barrier 2 await
+runH Barrier 1 reached.
+runH: no more data, exiting ...
+runH Barrier 2 await
+runH Barrier 2 reached.
+runH Barrier 2 reached.
+runH exiting
+runH exiting
+runO Barrier 2 reached.
+runO exiting
+Result: --- HHOOHHHOH
+Test 1 completed. --------------
+runH: posH = 1
+runH Barrier 1 await
+runH: posH = 3
+runH Barrier 1 await
+runO: posO = 0
+runO Barrier 1 await
+runO Barrier 1 reached.
+runH Barrier 1 reached.
+runH: has more data
+runH Barrier 2 await
+runH Barrier 1 reached.
+runH: has more data
+runH Barrier 2 await
+runO: has more data
+runO Barrier 2 await
+runO Barrier 2 reached.
+runO: posO = 2
+runO Barrier 1 await
+runH Barrier 2 reached.
+runH Barrier 2 reached.
+runH: posH = 5
+runH Barrier 1 await
+runH: posH = 6
+runH: set has no more data
+runH Barrier 1 await
+runH Barrier 1 reached.
+runH: no more data, exiting ...
+runH Barrier 2 await
+runH Barrier 1 reached.
+runH: no more data, exiting ...
+runH Barrier 2 await
+runO Barrier 1 reached.
+runO: no more data, exiting ...
+runO Barrier 2 await
+runO Barrier 2 reached.
+runO exiting
+runH Barrier 2 reached.
+runH exiting
+runH Barrier 2 reached.
+runH exiting
+Result: --- HHO
+Test 2 completed. --------------

@@ -1,0 +1,165 @@
+// Copyright (c) 2020 https://github.com/infoseekgithub. All rights reserved.
+
+
+import java.util.*;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.BrokenBarrierException;
+
+
+public class H2O {
+
+    int posO;
+    int posH;
+    String input;
+    StringBuilder sb;
+    Runnable hRunnable;
+    Runnable oRunnable;
+    CyclicBarrier cb;
+    CyclicBarrier cb2;
+    String barrier1Name = "Barrier 1";
+    String barrier2Name = "Barrier 2";
+    volatile boolean hasMoreData;
+
+    H2O(String in) {
+        input = in;
+        posO = 0;
+        posH = 0;
+        sb = new StringBuilder();
+        cb = new CyclicBarrier(3);
+        cb2 = new CyclicBarrier(3);
+        hasMoreData = true;
+
+        hRunnable = new Runnable() {
+            public void run() {
+                runH();
+            }
+        };
+
+        oRunnable = new Runnable() {
+            public void run() {
+                runO();
+            }
+        };
+    }
+
+
+    public void await(String str, boolean firstCb) {
+        String barrier = barrier1Name;
+        if (!firstCb) {
+            barrier = barrier2Name;
+        }
+        try {
+            System.out.println(str + " " + barrier + " await");
+            if (firstCb) {
+                cb.await();
+            } else {
+                cb2.await();
+            }
+        } catch (InterruptedException ex) {
+            System.out.println(ex);
+        } catch (BrokenBarrierException ex) {
+            System.out.println(str + ": " + ex);
+        }
+        System.out.println(str + " " + barrier + " reached. ");
+    }
+
+
+    public void runH() {
+
+        while(true) {
+            synchronized(this) {
+                while (posH < input.length() && input.charAt(posH) != 'H') {
+                    posH++;
+                }
+                System.out.println("runH: " + "posH = " + posH);
+                if (posH >= input.length()) {
+                    System.out.println("runH: set has no more data");
+                    hasMoreData = false;
+                } else {
+                    posH++;
+                }
+            }
+
+            await("runH", true);
+
+            if (hasMoreData) {
+                System.out.println("runH: has more data");
+                synchronized(this) {
+                   sb.append('H');
+                }
+            } else {
+                System.out.println("runH: no more data, exiting ...");
+                await("runH", false);
+                break;
+            }
+            await("runH", false);
+        }
+        System.out.println("runH exiting");
+    }
+
+
+    public void runO() {
+
+        while (true) {
+            while (posO < input.length() && input.charAt(posO) != 'O') {
+                posO++;
+            }
+
+            System.out.println("runO: " + "posO = " + posO);
+            if (posO >= input.length()) {
+                System.out.println("runO: set has no more data");
+                hasMoreData = false;
+            } else {
+                posO++;
+            }
+
+            await("runO", true);
+
+            if (hasMoreData) {
+                System.out.println("runO: has more data");
+                synchronized(this) {
+                   sb.append('O');
+                }
+            } else {
+                System.out.println("runO: no more data, exiting ...");
+                await("runO", false);
+                break;
+            }
+            await("runO", false);
+        }
+
+        System.out.println("runO exiting");
+    }
+
+
+    public void generateH2O() {
+        Thread h1 = new Thread(hRunnable);
+        Thread h2 = new Thread(hRunnable);
+        Thread o = new Thread(oRunnable);
+
+        h1.start();
+        h2.start();
+        o.start();
+        try {
+            h1.join();
+            h2.join();
+            o.join();
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+        System.out.println("Result: --- " + sb.toString());
+    }
+
+
+    public static void main(String[] args) {
+
+        String input = "HOOOHHHHH";
+        H2O h2o = new H2O(input);
+        h2o.generateH2O();
+        System.out.println("Test 1 completed. --------------");
+        String input2 = "OHOHOH";
+        H2O h2o_2 = new H2O(input2);
+        h2o_2.generateH2O();
+        System.out.println("Test 2 completed. --------------");
+    }
+}

@@ -1,0 +1,13 @@
+Analysis of Problem H2O
+
+A cyclic barrier is a reasonable choice for a barrier in contexts involving a
+fixed sized group of threads that must occasionally wait for each other.
+(http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/CyclicBarrier.java)
+
+Now that there are three processes, one of them reads from the input string
+to extract one 'O', and the other two read from the input string and each
+extracts one 'H'.
+
+In each cycle, the three threads work collaboratively to generate one H2O
+molecule. Cyclic barriers are used to make the three threads wait for each
+other in the process.
