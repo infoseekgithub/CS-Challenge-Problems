@@ -1,3 +1,6 @@
+// Copyright (c) 2020 https://github.com/infoseekgithub. All rights reserved.
+
+
 import java.util.*;
 
 class Event{
