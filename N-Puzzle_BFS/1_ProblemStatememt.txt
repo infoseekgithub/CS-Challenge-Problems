@@ -1,0 +1,73 @@
+Solving N-Puzzle Problem with BFS
+
+
+Like the N-Queen Problem, N-Puzzle Problem is generally solved by DFS.
+Can we solved it with BFS?
+
+--------------------------------------------------------------------
+Description of N-Puzzle Problem:
+(Courtesy of geeksforgeeks.com)
+
+N-Puzzle is a sliding blocks game that takes place on a k * k grid with
+((k * k) - 1) tiles each numbered from 1 to N (N = k * k - 1).
+
+The N-Puzzle game board contains one empty piece, you can slide the empty
+piece up, down, left, right to any position on the k * k grid and next to
+the current position of the empty piece. The empty cell is represented by
+the number 0.
+
+The Target State of the N-Puzzle game is the state where all the numbered
+pieces are sorted row by row, and in each row sorted column by column.
+
+e.g. Target State for k = 3, N = 8
+|-----------|
+| 1 | 2 | 3 |
+|-----------|
+| 4 | 5 | 6 |
+|-----------|
+| 7 | 8 | 0 |
+|-----------|
+
+The N-Puzzle problem is: Given a N-Puzzle game board, check whether it is
+solvable. i.e. whether you can slide the empty piece to rearrange the
+pieces of the game board to the target state. If it is solvable, print
+the sequence of moves to reach the target state.
+
+
+Example 1:
+
+Input: 
+|-----------|
+| 1 | 8 | 2 |
+|-----------|
+| 0 | 4 | 3 |
+|-----------|
+| 7 | 6 | 5 |
+|-----------|
+
+Output:
+Solvable. Move path toward Golden State is: ------
+RIGHT
+UP
+RIGHT
+DOWN
+DOWN
+LEFT
+UP
+RIGHT
+DOWN
+
+
+Example 2:
+
+Input: 
+|-----------|
+| 8 | 1 | 2 |
+|-----------|
+| 0 | 4 | 3 |
+|-----------|
+| 7 | 6 | 5 |
+|-----------|
+
+Output:
+Not solvable.
