@@ -1,0 +1,9 @@
+
+Set the board according to the state that just polled out from the queue. 
+Unlike DFS, the states are not continuous evolving, but jumps from branch to branch.
+
+Therefore we need a way to store the board status in queue and poll it out when needed.
+We use a List to store the board status and call it snapshot.
+
+Once we have a way to store and bring back the board status, solving the problem with BFS
+can be done.
