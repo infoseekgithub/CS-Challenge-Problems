@@ -1,0 +1,18 @@
+Solvable. Path to Golden State is:
+RIGHT
+--------------------
+
+Solvable. Path to Golden State is:
+RIGHT
+UP
+RIGHT
+DOWN
+DOWN
+LEFT
+UP
+RIGHT
+DOWN
+--------------------
+
+Problem is not solvable.
+--------------------
