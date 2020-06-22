@@ -1,0 +1,19 @@
+-- Positive Tests: ---
+10
+110010
+110010
+11100100
+
+-- Negative Tests: ---
+java.lang.IllegalArgumentException: Given string 1101100 is not a special binary string
+	at SpecialBinaryString.getLargestStringHelper(SpecialBinaryString.java:35)
+	at SpecialBinaryString.getLargestStringHelper(SpecialBinaryString.java:51)
+	at SpecialBinaryString.getLargestString(SpecialBinaryString.java:14)
+	at SpecialBinaryString.main(SpecialBinaryString.java:87)
+java.lang.IllegalArgumentException: Given string 110110011 is not a special binary string
+	at SpecialBinaryString.getLargestStringHelper(SpecialBinaryString.java:35)
+	at SpecialBinaryString.getLargestStringHelper(SpecialBinaryString.java:51)
+	at SpecialBinaryString.getLargestStringHelper(SpecialBinaryString.java:51)
+	at SpecialBinaryString.getLargestStringHelper(SpecialBinaryString.java:51)
+	at SpecialBinaryString.getLargestString(SpecialBinaryString.java:14)
+	at SpecialBinaryString.main(SpecialBinaryString.java:94)

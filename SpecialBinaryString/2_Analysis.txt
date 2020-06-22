@@ -1,0 +1,24 @@
+Problem Analysis of Special Binary String
+
+
+Given a special binary string, return a revised string that swap any two
+consecutive substrings that are both special substring. The resulting string
+should have the largest lexicographical value.
+i.e. More 1's before 0's.  110010 is larger than 101100
+
+A special binary string may contain one ore more substrings that special binary
+strings. Starting character must be '1'.
+
+Search from the next char after '1' until we see an unmatched '0', at which time
+we found a full enclosing section that is special binary string.
+        
+During this procedure, we recursively call to process the section's substrings
+and store the section's substrings in a list, and sort the list based on 
+lexicographical order.
+
+Then we return the revised version of the section to its caller.
+
+The given string could include a combination of a few substrings that are speical
+binary strings. Therefore we need to process the given string to its full length,
+and we may get a single string or a list of strings. Again, sorte the list
+lexicographically as needed.
